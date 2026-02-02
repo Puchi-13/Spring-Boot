@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Pr1ClientesApplication",
+            "request": "launch",
+            "mainClass": "com.example.demo.Pr1ClientesApplication",
+            "projectName": "demo4"
+        },
+        {
+            "type": "java",
+            "name": "Pr1Application",
+            "request": "launch",
+            "mainClass": "com.example.demo.Pr1Application",
+            "projectName": "pr1"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Pr1Application<pr1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.pr1_clientes.pr1.Pr1Application",
+            "projectName": "pr1",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=57097 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=pr1"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.demo.demo.DemoApplication",
+            "projectName": "demo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
