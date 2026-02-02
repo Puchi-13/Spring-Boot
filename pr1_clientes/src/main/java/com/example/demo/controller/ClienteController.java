@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.dto.ClienteDTO;
 import com.example.demo.service.ClienteService;
 
+
 @Controller
 public class ClienteController {
 	@Autowired
@@ -64,4 +65,11 @@ public class ClienteController {
 		return "redirect:/clientes";
 	}
 
+	@RequestMapping("/clientes/update/{idCliente}")
+	public String updateCliente(@PathVariable Long idCliente, Model model) {
+		buscarCliente = clienteService.getClienteById(idCliente);
+		model.addAttribute("clientedto", buscarCliente);
+		model.addAttribute("add", false);
+		return "clienteform";
+	}
 }
