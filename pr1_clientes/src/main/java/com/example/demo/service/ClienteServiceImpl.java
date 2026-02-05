@@ -47,4 +47,21 @@ public class ClienteServiceImpl implements ClienteService{
 	public void deleteCliente(Long id) {
 		clienteRepository.deleteById(id);
 	}
+
+	@Override
+	public void updateCliente(ClienteDTO clientDTO) {
+		Cliente cliente=ClienteDTO.convertToEntity(clientDTO);
+		Optional<Cliente> clienteExistente = clienteRepository.findById(cliente.getId());
+		if (clienteExistente.isPresent()) {
+			Cliente clientebd = clienteExistente.get();
+			clientebd.setNombre(cliente.getNombre());
+			clientebd.setApellidos(cliente.getApellidos());
+			clientebd.setEmail(cliente.getEmail());
+			clientebd.setClaveSeguridad(cliente.getClaveSeguridad());
+			clientebd.setNif(cliente.getNif());
+			clienteRepository.save(clientebd);
+		} else {
+			clienteRepository.save(cliente);
+		}
+	}
 }

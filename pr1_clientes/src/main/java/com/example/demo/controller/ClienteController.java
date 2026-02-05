@@ -70,6 +70,12 @@ public class ClienteController {
 		buscarCliente = clienteService.getClienteById(idCliente);
 		model.addAttribute("clientedto", buscarCliente);
 		model.addAttribute("add", false);
-		return "clienteform";
+		return "clienteformedit";
+	}
+
+	@PostMapping("/clientes/saveupdate/{idCliente}")
+	public String guardar_actualizarCliente(@PathVariable Long idCliente, @ModelAttribute ClienteDTO clienteDTO) {
+		clienteService.updateCliente(clienteDTO);
+		return "redirect:/clientes";
 	}
 }

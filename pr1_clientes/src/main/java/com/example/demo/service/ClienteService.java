@@ -9,8 +9,5 @@ public interface ClienteService {
 	ClienteDTO getClienteById(Long id);
 	List <ClienteDTO> listAllClientes();
 	void deleteCliente(Long id);
-	
-	
-	
-
+	void updateCliente(ClienteDTO clientDTO);
 }
