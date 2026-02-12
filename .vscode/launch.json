@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DemoJson2Application",
+            "request": "launch",
+            "mainClass": "com.example.demo.DemoJson2Application",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Pr1ClientesApplication",
             "request": "launch",
             "mainClass": "com.example.demo.Pr1ClientesApplication",
